@@ -1,0 +1,2 @@
+add_subdirectory(sharedTest)
+add_subdirectory(staticTest)
