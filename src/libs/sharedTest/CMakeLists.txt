@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
 
-
 qt_add_library(sharedTest SHARED)
 
 qt_add_qml_module(sharedTest
@@ -10,24 +9,25 @@ qt_add_qml_module(sharedTest
 )
 
 target_link_libraries(sharedTest
-  PUBLIC 
-  Qt6::Qml 
-  Qt6::QmlPrivate 
-  Qt6::Quick 
-  Qt6::QuickPrivate 
-  Qt6::QuickLayouts 
-  Qt6::QuickLayoutsPrivate 
+  PUBLIC
+  Qt6::Qml
+  Qt6::QmlPrivate
+  Qt6::Quick
+  Qt6::QuickPrivate
+  Qt6::QuickLayouts
+  Qt6::QuickLayoutsPrivate
+
+  Qt6::Multimedia
 )
 
 set_target_properties(sharedTestplugin PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
 
-
 install(TARGETS sharedTest)
 install(TARGETS sharedTestplugin
-LIBRARY DESTINATION plugins)
+  LIBRARY DESTINATION plugins)
 
 # qt_generate_deploy_qml_app_script(
-#   TARGET sharedLib
-#   OUTPUT_SCRIPT depScript)
+# TARGET sharedLib
+# OUTPUT_SCRIPT depScript)
 
 # install(SCRIPT ${depScript})
